@@ -1,0 +1,76 @@
+<h2>Available Food</h2>
+{% for item in items %}
+  <li>
+    <strong>{{ item.food_description }}</strong>
+    <span>Quantity: {{ item.quantity }}</span><br>
+    <span>Category: {{ item.category }}</span>
+  </li>
+{% empty %}
+  <li class="empty-message">No food items available at the moment.</li>
+{% endfor %}
+
+<style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #f4f7f8, #dfe9f3);
+    color: #333;
+    padding: 40px 20px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.1);
+  }
+
+  li strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #388e3c;
+    margin-bottom: 8px;
+  }
+
+  li span {
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  .empty-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 30px;
+  }
+</style>
